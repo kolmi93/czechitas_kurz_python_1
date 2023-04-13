@@ -1,4 +1,4 @@
-sklad = {
+store = {
   "1N4148": 250,
   "BAV21": 54,
   "KC147": 147,
@@ -6,15 +6,16 @@ sklad = {
   "BC547C": 10
 }
 
-pozadavek = input("Jakou součástku potřebujete koupit?\n")
-if pozadavek in sklad:
+item = input("Jakou součástku potřebujete koupit?\n")
+if item in store:
     print ("Vámi požadovaná součástka je skladem.")
-    mnozstvi = int(input("Jaké množství potřebujete nakoupit?\n"))
-    for sklad, amount in sklad.items():
-        if mnozstvi > amount:
-            print("Lze dodat pouze omezené množství kusů.")
-        else:
-            print("Poptávku lze uspokojit v plné výši.")
+    demand = int(input("Jaké množství potřebujete nakoupit?\n"))
+    if demand > store[item]:
+        deficit = demand + (-1*store[item])
+        print(f"Lze dodat pouze omezené množství kusů. Aktuálně je k dispozici {store[item]} ks. Chybí {deficit} ks.")
+        store.pop(item)
+    else:
+        print("Poptávku lze uspokojit v plné výši.")
+        store[item] -= demand
 else:
     print("Vámi požadovaná součástka není skladem.")
-    exit()
