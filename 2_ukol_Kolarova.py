@@ -11,7 +11,7 @@ if item in store:
     print ("Vámi požadovaná součástka je skladem.")
     demand = int(input("Jaké množství potřebujete nakoupit?\n"))
     if demand > store[item]:
-        deficit = demand + (-1*store[item])
+        deficit = demand - (store[item])
         print(f"Lze dodat pouze omezené množství kusů. Aktuálně je k dispozici {store[item]} ks. Chybí {deficit} ks.")
         store.pop(item)
     else:
