@@ -2145,16 +2145,13 @@ staty = [
 ]
 #vypíše jen státy, pro které platí question
 question = input("Jaký region Vás zajímá?\n")
+region_states = []
+
 for key in staty:
     if key["region"] == question:
-        print(key["name"])
+        region_states.append(key["name"])
 
-#vypíše všechny státy + neznámé regiony
-question = input("Jaký region Vás zajímá?\n")
-for key in staty:
-    if key["region"] == question:
-        print(key["name"])
-    elif key["region"] not in question:
-        print("Neznámý region.")
-
-#jak udělat, aby se v případě regionu, který není na seznamu vypsalo jen 1x "Neznámý region"??
+if not region_states:
+    print(f"Neznamy region {question}.")
+else:
+    print(f"Staty v regionu {question}: {region_states}")

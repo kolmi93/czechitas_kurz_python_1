@@ -46,16 +46,12 @@ morse_code = {
     ")": "-.--.-",
 }
 
-text = input("Jaký text chcete napsat v morseově abecedě?\n")
-print(text)
-space = (" ")
-if space in text:
-    print("/")
-for one_letter in text:
-    print(one_letter, end=' ')
-    if one_letter in morse_code:
-        print(morse_code[one_letter])
-    elif space in text:
+morse_code = {...}
+
+text = input("Zadejte text: \n")
+
+for pismeno in text:
+    if pismeno == " ":
         print("/")
     else:
-        print("Vámi hledaný znak se nenachází v Morseově abecedě.")
+        print(morse_code[pismeno], end=" ")
