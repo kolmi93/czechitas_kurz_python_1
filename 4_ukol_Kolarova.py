@@ -1,14 +1,16 @@
 phone_number = input("Na jaké telefonní číslo chcete zpávu odeslat?\n")
 
-def phone_verification(phone_number):
-    if len(phone_number) == 9:
+phone_standart = phone_number.replace(" ", "")
+
+def phone_verification(phone_standart):
+    if len(phone_standart) == 9:
         print("true")
-    elif len(phone_number) == 13 and phone_number[0:4] == ("+420"):
+    elif len(phone_standart) == 13 and phone_standart[0:4] == ("+420"):
         print("true")
     else:
         print("false")
 
-phone_verification(phone_number)
+phone_verification(phone_standart)
 
 message = input("Jakou zprávu chcete poslat?\n")
 
