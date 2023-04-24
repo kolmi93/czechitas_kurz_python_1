@@ -20,7 +20,7 @@ def message_price(message):
         price = 3
         print(f"Cena Vaší zprávy je: {price} Kč.")
     elif (len(message)/180) == 0:
-        price = (len(message/180))
+        price = len(message)//180
         print(f"Cena Vaší zprávy je: {price} Kč.")
     else:
         price = (len(message)//180 + 1)
