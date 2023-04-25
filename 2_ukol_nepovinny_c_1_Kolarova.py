@@ -46,8 +46,6 @@ morse_code = {
     ")": "-.--.-",
 }
 
-morse_code = {...}
-
 text = input("Zadejte text: \n")
 
 for pismeno in text:
