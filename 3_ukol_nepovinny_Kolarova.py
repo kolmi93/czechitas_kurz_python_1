@@ -12,7 +12,6 @@ for key in students_list:
 for key in bonuses:
     if key not in new_dict:
         new_dict[key] = bonuses[key]
-print(new_dict)
 
 marks = {}
 for key in new_dict:
