@@ -25,6 +25,7 @@ while not is_valid:
         break
     else:
         is_valid = False
+        print("Napsali jste špatný formát telefonního čísla. Prosím, zkuste to znovu.")
 
 def message_price(message):
     lenght = math.ceil((len(message)/180))
