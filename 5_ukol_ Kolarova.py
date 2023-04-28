@@ -15,20 +15,11 @@ print(day)
 # seznam ranních teplot
 morning = [temperatures[0] for temperatures in teploty]
 print(morning)
-    #nebo
-morning_2 = [temperatures[-4] for temperatures in teploty]
-print(morning_2)
 
 # seznam nočních teplot
 evening = [temperatures[3] for temperatures in teploty]
 print(evening)
-    #nebo
-evening_2 = [temperatures[-1] for temperatures in teploty]
-print(evening_2)
 
 # seznam dvouprvkovýh seznamů poledních a nočních teplot
-noon_evening = [[temperatures[1], temperatures[3]] for temperatures in teploty]
-print(noon_evening)
-    #nebo
 noon_evening_2 = [[temperatures[1], temperatures[-1]] for temperatures in teploty]
 print(noon_evening_2)

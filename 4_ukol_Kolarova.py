@@ -7,19 +7,24 @@ phone_standart = phone_number.replace(" ", "")
 def phone_verification(phone_standart):
     if len(phone_standart) == 9:
         return True
-    elif len(phone_standart) == 13 and phone_standart[0:4] == ("+420"):
+    elif len(phone_standart) == 13 and phone_standart[:4] == ("+420"):
         return True
-    else:
-        return False
-    
-phone_verification(phone_standart)
+    return False
 
-if phone_verification(phone_standart) == True:
+if phone_verification(phone_standart):
     message = input("Jakou zprávu chcete poslat?\n")
 else:
     print("Napsali jste špatný formát telefonního čísla. Prosím, zkuste to znovu.")
-    exit()
-# pokud bych nechtěla program ukončit, ale spustit znovu od začátku od phone_number input. Dá se udělat nějaká taková smyčka? Aby to spouštělo dokola než by dotyčný napsal správné číslo?
+    is_valid = False
+
+while not is_valid:
+    new_number = input("Na jaké telefonní číslo chcete zprávu odeslat?\n")
+    if len(new_number) == 9 or (len(new_number) == 13 and new_number[:4] == ("+420")):
+        is_valid = True
+        message = input("Jakou zprávu chcete poslat?\n")
+        break
+    else:
+        is_valid = False
 
 def message_price(message):
     lenght = math.ceil((len(message)/180))
