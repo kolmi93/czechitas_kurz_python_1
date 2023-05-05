@@ -2,4 +2,4 @@
 https://regex101.com/r/knZYno/1
 
 # ÚKOL Č.2:
-https://regex101.com/r/OV56Tv/1
+https://regex101.com/r/fub2iq/1
