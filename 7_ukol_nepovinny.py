@@ -1,4 +1,4 @@
-class Car():
+class Car:
     def __init__(self, registration_plate, car_type, km):
         self.registration_plate = registration_plate
         self.car_type = car_type
